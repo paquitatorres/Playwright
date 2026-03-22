@@ -1,0 +1,22 @@
+#### Cambios que hice (TESTER): MODIFICACION DEL ARCHIVO Y ELECCIONES EN LA ARQUITECTURA DE PRUEBAS
+
+Se modifica de la carpeta Playwhright.config.ts 
+                -Los browswers se desahabilitan ,solo se permite que se ejecute Chromium. 
+                -Se modifica la URL Base 
+                -Se habilita para tomar screnshots
+
+
+Para las pruebas de API  uso la informacion del Swagger :
+
+https://api.practicesoftwaretesting.com/api/documentation
+
+
+Carpeta utilities. 
+              Se crea la carpeta utilities en cual pondre en Helpers: 
+              - El pool o bateria de usuarios para no tener problemas con los tokens en los tests. 
+              
+
+
+Components: En vez de tener una carpeta de components para poner el menu Header ya que es un solo un elemento 
+con el que test me pide interactuar lo voy a poner en la carpera de Pages aun sabiendo que es
+ una mejor practica centralizar en una carpeta aparte. 

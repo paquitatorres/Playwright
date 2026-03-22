@@ -1,0 +1,27 @@
+{ 
+"usuarios":
+[
+    {
+ "tipo de usuario":"valido",
+ "correo":"customer@practicesoftwaretesting.com",
+ "contraseña":"welcome01",
+ "nombreUsuario":"Jane Doe"
+    }, 
+    {
+    "tipo de usuario":"contraseña invalida",
+    "correo":"customer@practicesoftwaretesting.com",
+    "contraseña":"wrongpassword"
+    }, 
+    {
+    "tipo de usuario":"correo invalido",
+    "correo":"invalidemail@practicesoftwaretesting.com",
+    "contraseña":"welcome01"
+    },
+    {
+    "tipo de usuario":"vacio", 
+    "correo":" ",
+    "contraseña":" "
+    }
+
+]
+}
