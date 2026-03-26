@@ -47,11 +47,11 @@ async fillContactForm(firstName: string, lastName: string, email: string, subjec
 
     await this.firstNameInput.fill(firstName);
     await this.lastNameInput.fill(lastName);
-    await this.waitStaticDebug(2); // Espera estática para depuración
+    
     await this.emailInput.fill(email);
-    await this.waitStaticDebug(2); // Espera estática para depuración
+   
     await this.subjectInput.selectOption(subject);
-    await this.waitStaticDebug(2); // Espera estática para depuración
+   
     await this.messageInput.fill(message);
     
   }

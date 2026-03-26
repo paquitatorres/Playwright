@@ -3,7 +3,9 @@
 {    
 "correo":"customer2@practicesoftwaretesting.com",
 "password":"welcome01",
-"producto":"hammer"
+"producto":"hammer",
+"state": "Centro",
+"postcode": "s4200"
 }
 }
 

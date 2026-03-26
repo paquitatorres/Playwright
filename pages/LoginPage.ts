@@ -54,8 +54,8 @@ async gotoLoginPage() {
   }
 
 
-  async checkUserLogged() {
-    await this.userName
+  async checkUserLogged(): Promise<boolean> {
+    return this.userName.isVisible();
   }
 
 

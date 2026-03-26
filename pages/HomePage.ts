@@ -12,6 +12,9 @@ export class HomePage extends BasePage {
     readonly nombreProducto:Locator;
     readonly filtroDropdown: Locator;
     readonly precioProducto: Locator;
+    readonly primerProductoSeleccionado: Locator;
+    
+
 
 
 
@@ -19,12 +22,14 @@ constructor (page: Page) {
 
     super(page);
 
-this.searchBar = page.locator('[data-test="search-query"]');
-this.searchButton = page.locator('[data-test="search-submit"]');
-this.productoSeleccionado = page.locator('[data-test^="product-"]');
+this.searchBar = this.page.locator('[data-test="search-query"]');
+this.searchButton = this.page.locator('[data-test="search-submit"]');
+this.productoSeleccionado = this.page.locator('[data-test^="product-"]');
 this.nombreProducto = this.page.locator('[data-test="product-name"]');
-this.filtroDropdown = page.locator('[data-test="sort"]');
-this.precioProducto = page.locator('span.float-end.text-muted:visible');
+this.filtroDropdown = this.page.locator('[data-test="sort"]');
+this.precioProducto = this.page.locator('span.float-end.text-muted:visible');
+this.primerProductoSeleccionado = this.page.locator("//div[@class='container']//a[2]");
+
 }
     
 
@@ -85,7 +90,14 @@ async obtenerPrecios(): Promise<number[]> {
   }
 
 
+async buscarySeleccionarProductoHP(producto: string) {
 
+    await this.searchBar.fill(producto);
+    await this.searchButton.click();
+    await this.primerProductoSeleccionado.waitFor({state: 'visible'});
+    await this.primerProductoSeleccionado.click();
+ 
+}
 
 
 

@@ -7,12 +7,7 @@ import { Waits } from '../../utilities/Waits';
 import { Components } from '../../pages/Components';
 import { Cart } from '../../pages/Cart';
 
-// const productsSearchData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../Fixtures/productsSeachdata.json'), 'utf-8'));
-
-// const usuarioData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../Fixtures/usuarios.json'), 'utf-8'));
-
 const DatosNecesarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../../Fixtures/ForE2EFlow.json'), 'utf-8'));
-
 
 
 
@@ -25,51 +20,51 @@ const components = new Components(page);
 const cart = new Cart(page);
 
 
+await test.step("seleccionar producto para el carrito de compras",async()=>{
 
- //ir a pagina
  await homePage.open();
 
-//logguearme 
-await loginPage.gotoLoginPage();
-await expect(page).toHaveURL('/auth/login');
+ await expect(page).toHaveURL('/');
 
-await loginPage.login(DatosNecesarios.DatosHappyPath.correo, DatosNecesarios.DatosHappyPath.password);
+ await homePage.buscarySeleccionarProductoHP(DatosNecesarios.DatosHappyPath.producto);
 
+ await cart.agregarProducto();
 
-
- // Ir al Home y seleccionar Producto 
-
- await components.gotoHomePage();
-
- await homePage.buscarProducto(DatosNecesarios.DatosHappyPath.producto[0]);
-
- await homePage.seleccionarProducto();
+});
 
 
- //  Agregar el producto y acciones en el carrito de compra 
 
-
-  await cart.agregarProducto();
+ await test.step("ir al carrito de compras",async()=>{
 
   await components.gotoCart();
 
-  await cart.processtoCheckout1();
+    await wait.waitStaticDebug(4); //para debbuguear
 
-  await cart.processtoCheckout2();
+  await cart.processtoCheckout1(); 
 
-  await cart.completarDatosFaltantes("Centro","s4200"); 
-
-  await cart.payment();
-
-  await expect (cart.menssagePaymentOk()).toBeTruthy();
+});
 
 
+await test.step("iniciar sesion para continuar ",async()=>{
+
+ await cart.loginCart(DatosNecesarios.DatosHappyPath.correo, DatosNecesarios.DatosHappyPath.password);
+
+  await page.getByRole('button', { name: 'Proceed to checkout' }).click();
+
+ });
 
 
+await test.step("completar datos faltantes y fin de compra",async()=>{
 
+ await cart.completarDatosFaltantes(
+  DatosNecesarios.DatosHappyPath.state,
+  DatosNecesarios.DatosHappyPath.postcode); 
+await page.getByRole('button', { name: 'Proceed to checkout' }).click();
 
+ await cart.payment();
 
-
+ await expect(cart.PaymentOkMenssage).toBeVisible();
+});
 
 
 

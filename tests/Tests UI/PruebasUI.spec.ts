@@ -123,8 +123,6 @@ test ('Validar subir un archivo.txt a los comprobantes', async({ page }) => {
 
 
 
-
-
 test.describe('Login - Casos negativos', () => {
   
 test.beforeEach(async ({ page }) => {
