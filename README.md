@@ -8,6 +8,31 @@ Incluye automatización de test de UI, enfocada en la validación funcional desd
 Además, se contemplan escenarios de alta demanda (eventos como Black Friday) donde se evalúa que no haya perdida de la capacidad del sistema para mantener su rendimiento, o poder crear alertas antes funcionamientos  .
 El enfoque no está solo en ejecutar pruebas, sino en aplicar criterio: definir qué validar, cómo hacerlo y qué métricas observar para asegurar la calidad del producto en contextos reales.
 
+Page Object Model (POM)
+
+The project follows the Page Object Model design pattern to improve:
+
+maintainability
+readability
+scalability
+reusable components
+
+Each page contains its locators and actions, separating logic from tests.
+
+
+Continuous Integration
+
+This project uses GitHub Actions to automatically run tests on every push and pull request.
+
+CI/CD includes:
+
+install dependencies
+install browsers
+run tests
+generate HTML report
+upload artifacts
+publish report
+
 ### Technologies Used
 - Playwright
 - TypeScript
@@ -19,6 +44,23 @@ Page Object Model (POM)
 CI/CD
 HTML Reports Creation 
 API Testing - E2E Testing - UI Testing
+
+Running Tests Locally
+
+Install dependencies:
+
+npm install
+
+Run tests:
+
+npx playwright test
+
+Open HTML report:
+
+npx playwright show-report
+
+
+
 
 ## Test Reports
 
@@ -34,7 +76,53 @@ push to main - push to master - pull requests
 
 Report is available in GitHub Actions artifacts.
 
+
+Project Structure
+Playwright/
+│
+├── pages/
+│   ├── HomePage.ts
+│   ├── LoginPage.ts
+│   ├── Cart.ts
+│   ├── ContactPage.ts
+│
+├── tests/
+│   ├── UI/
+│   │   └── PruebasUI.spec.ts
+│   │
+│   ├── E2E/
+│   │   └── CompraExitosa.spec.ts
+│   │
+│   ├── API/
+│
+├── Fixtures/
+│   └── ForE2EFlow.json
+│
+├── playwright.config.ts
+├── package.json
+├── README.md
+├── .github/workflows/playwright.yml
+
+
 ## Test Coverage 
+
+UI Testing
+Login validation
+Navigation
+Page elements
+User interactions
+End-to-End Testing
+Complete purchase flow
+Product selection
+Cart validation
+Checkout process
+API Testing
+Product endpoints
+Data validation
+Status code verification
+Response structure validation
+
+
 
 ### TEST 1 “BUSCAR PRODUCTOS (PASADOS POR JSON), SELECCIONAR EL SEGUNDO RESULTADO O INFORMAR ERROR CON MENSAJE DE QUE NO EXISTE SEGUNDO PRODUCTO”
 
@@ -68,3 +156,11 @@ No basta con entrar; hay que demostrar que estamos dentro.
 ## API TEST
 
 ### TEST “CREAR UN CARRITO,OBTENIENDO RESPUESTA HTTP 200, MARQUE COMO ERROR SI DA OTRA RESPUESTA, O TIEMPO DE RESPUESTA MAJOR A 2000ms.”
+
+
+
+
+Goal
+
+This project is part of my professional portfolio to demonstrate automation testing skills and continuous learning in QA engineering. 
+
