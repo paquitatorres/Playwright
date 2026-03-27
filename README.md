@@ -1,3 +1,11 @@
+![Playwright](https://img.shields.io/badge/Playwright-Test%20Automation-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-Language-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![CI/CD](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-orange)
+![Status](https://img.shields.io/badge/tests-passing-brightgreen)
+
+![CI](https://github.com/paquitatorres/Playwright/actions/workflows/playwright.yml/badge.svg)
+
 # Playwright Automation Testing Project
 
 ## Overview 
@@ -21,12 +29,16 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
 | <img width="75" height="75" alt="playwright" src="https://github.com/user-attachments/assets/030573e5-2bb9-46df-956b-86f50add4917" />| 	<img width="75" height="75" alt="typeScript" src="https://github.com/user-attachments/assets/912db761-0ecb-46e1-a393-7a2cfbd52152" />| <img width="75" height="75" alt="node.js" src="https://github.com/user-attachments/assets/8e7dbe5f-d4d9-4b0d-8826-f7e699a371e5" />|<img width="75" height="75" alt="github actions" src="https://github.com/user-attachments/assets/5633cd6e-0549-42cb-b56a-a38c90a3ecb3" />|<img width="75" height="75" alt="ubuntu" src="https://github.com/user-attachments/assets/2f73dde0-39fa-4351-abbf-6c1db0f35e4b" />|
  
 
-### Testing Knowledge & Practices
-```  -Test architecture using Page Object Model (POM).  ```
-```  -CI/CD integration for continuous testing workflows.  ```
-```  -Test reporting with HTML-based reports.  ```
-```  -API, End-to-End (E2E), and UI testing strategies.  ```
-
+### Features
+- Data-driven testing (JSON / Excel) for dynamic scenarios
+- UI Test Automation with Playwright using Page Object Model (POM)
+- API Testing with and without authentication (token-based)
+- End-to-End (E2E) testing covering critical user flows (purchase flow)
+- Advanced error handling with controlled failures and evidence capture
+- HTML reporting for test results visualization
+- Performance validation (response time assertions)
+- Concurrency testing (parallel requests simulation)
+- CI/CD integration with GitHub Actions
 
 
 ### Page Object Model (POM)
@@ -77,21 +89,6 @@ To execute the tests on your local environment:
 
 ## Test Coverage 
 
-UI Testing
-Login validation
-Navigation
-Page elements
-User interactions
-End-to-End Testing
-Complete purchase flow
-Product selection
-Cart validation
-Checkout process
-API Testing
-Product endpoints
-Data validation
-Status code verification
-Response structure validation
 
 
 
