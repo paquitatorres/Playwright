@@ -127,7 +127,7 @@ To execute the tests on your local environment:
 
 ##  API Testing
 
-:arrow_right_hook:  Cart Creation + Performance Measurement
+### :arrow_right_hook:  Cart Creation + Performance Measurement
 ###### Sends a POST request to /carts. Measures response time.
 
 **Validations:**
@@ -135,35 +135,33 @@ To execute the tests on your local environment:
 - Response contains a non-empty id
 - Response time < 2000 ms
 
-** Value:**  Combines functional validation with performance checks (critical smoke test).
+**Value:**  Combines functional validation with performance checks (critical smoke test).
 
-:arrow_right_hook: Product Retrieval & Data Reusability
+### :arrow_right_hook: Product Retrieval & Data Reusability
 ###### Sends a GET request to /products. Extracts a valid product ID for reuse in other tests.
 
 **Validations:**
- $\color{Green}{\textsf{ Status code: 200 (OK) }}$ 
+ - $\color{Green}{\textsf{ Status code: 200 (OK) }}$
+   
 **Value:** Ensures data availability and enables realistic test chaining.
 
  
- :arrow_right_hook: Endpoint Validation (With & Without Authentication)
+###  :arrow_right_hook: Endpoint Validation (With & Without Authentication)
 ###### Initializes a token pool (simulating multiple users).
 ###### Tests both: Public endpoints (no authentication) Protected endpoints (with token)
 ###### Generates a summary report (OK / FAILED).
 
  **Value:**  Validates API availability, security, and overall stability.
 
-:arrow_right_hook: Concurrency Testing: Multiple Add-to-Cart Requests
+###  :arrow_right_hook: Concurrency Testing: Multiple Add-to-Cart Requests
 ###### Adds the same product 10 times in parallel.
 ###### Measures total and average response time.
 
-Validations:
+**Validations:**  
+###### All requests return successfully
+###### Final cart state: Contains a single product entry. Quantity correctly accumulated (10), not duplicated entries
 
-All requests return successfully
-Final cart state:
-Contains a single product entry
-Quantity correctly accumulated (10), not duplicated entries
-
-** Value: ** Validates business logic and system behavior under concurrent load.
+**Value:** Validates business logic and system behavior under concurrent load.
 
 ## Business Impact
 
