@@ -97,54 +97,39 @@ To execute the tests on your local environment:
 
 **Value:** Ensures data consistency and correct business logic implementation on the frontend.
 
-🔐 Test 3: Successful Login (Happy Path)
+### :arrow_forward: Test 3: File Upload Validation
 
-Validates the complete authentication flow using valid credentials.
+###### Validates the file upload functionality. Upload of a .txt file with specific constraints (e.g., defined file size).
 
-A login is performed with a valid user.
-Session validation is performed by checking:
-Elements visible only to authenticated users (e.g., profile name).
-Session persistence (e.g., Local Storage data or session token).
+**Value:** Covers a key user interaction within the system.
 
-👉 Value: Ensures that the critical access flow works correctly.
+### :arrow_forward: Test 4: Successful Login (Happy Path)
 
-❌ Test 4: Negative Login Scenarios
+###### Validates the complete authentication flow using valid credentials. A login is performed with a valid user. Session validation is performed by checking: Elements visible only to authenticated users (e.g., profile name). Session persistence (e.g., Local Storage data or session token).
 
-This test suite evaluates system behavior under invalid authentication conditions:
+**Value:** Ensures that the critical access flow works correctly.
 
-Incorrect username
-Incorrect password
-Empty input fields
+### :arrow_forward: Test 5: Negative Login Scenarios
 
-👉 Value: Ensures proper error handling and secure access control.
+###### This test suite evaluates system behavior under invalid authentication conditions: (a) Incorrect username (b)Incorrect password (c)Empty input fields
 
-📎 Test 5: File Upload Validation
+**Value:** Ensures proper error handling and secure access control.
 
-Validates the file upload functionality.
 
-Upload of a .txt file with specific constraints (e.g., defined file size).
 
-👉 Value: Covers a key user interaction within the system.
+ 
 
-🔄 End-to-End (E2E) Test
-🛒 Complete Purchase Flow
+## End-to-End (E2E) Test
+### Complete Purchase Flow
+###### Simulates the full user journey: Product selection - Add to cart - Checkout process
 
-Simulates the full user journey:
+**Value:** Validates the core business flow from an end-user perspective.
 
-Product selection
-Add to cart
-Checkout process
+##  API Testing
+ 1. Cart Creation + Performance Measurement
+###### Sends a POST request to /carts. Measures response time.
 
-👉 Value: Validates the core business flow from an end-user perspective.
-
-🔌 API Testing
-⚡ 1. Cart Creation + Performance Measurement
-Sends a POST request to /carts.
-Measures response time.
-
-Validations:
-
-Status code: 201 (Created)
+**Validations:** Status code: 201 (Created)
 Response contains a non-empty id
 Response time < 2000 ms
 
