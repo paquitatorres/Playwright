@@ -10,7 +10,25 @@ The project includes both **UI and API testing**.
 Additionally, the project considers high-demand scenarios (such as Black Friday events), evaluating the system’s ability to maintain performance under load and enabling early detection.
 
  _The approach goes beyond simply executing tests, it emphasizes critical thinking: defining what to validate, how to validate it, and which metrics to monitor in order to ensure product quality in real world scenarios._ 
-  
+
+
+
+
+### Tech Stack 
+
+ Playwright | TypeScript | Node.js | GitHub Actions | Ubuntu |
+|     :---:      |     :---:      |     :---:      |     :---:      |       :---:      |
+| <img width="75" height="75" alt="playwright" src="https://github.com/user-attachments/assets/030573e5-2bb9-46df-956b-86f50add4917" />| 	<img width="75" height="75" alt="typeScript" src="https://github.com/user-attachments/assets/912db761-0ecb-46e1-a393-7a2cfbd52152" />| <img width="75" height="75" alt="node.js" src="https://github.com/user-attachments/assets/8e7dbe5f-d4d9-4b0d-8826-f7e699a371e5" />|<img width="75" height="75" alt="github actions" src="https://github.com/user-attachments/assets/5633cd6e-0549-42cb-b56a-a38c90a3ecb3" />|<img width="75" height="75" alt="ubuntu" src="https://github.com/user-attachments/assets/2f73dde0-39fa-4351-abbf-6c1db0f35e4b" />|
+ 
+
+### Testing Knowledge & Practices
+
+- Test architecture using Page Object Model (POM)
+- CI/CD integration for continuous testing workflows
+- Test reporting with HTML-based reports
+- API, End-to-End (E2E), and UI testing strategies
+
+
 
 ### Page Object Model (POM)
 > The project follows the Page Object Model design pattern to improve:
@@ -18,42 +36,34 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
 > **Each page contains its locators and actions, separating logic from tests.**
 
 
+
 ### Continuous Integration
 
 > This project uses GitHub Actions to automatically run tests on every push and pull request. CI/CD includes:
 > Install dependencies - Install browsers - Run tests - Generate HTML report - Upload artifacts - Publish report
 
-### Tech Stack 
-
- Playwright | TypeScript | Node.js | GitHub Actions | Ubuntu |
-|     :---:      |     :---:      |     :---:      |     :---:      |       :---:      |
-| <img width="75" height="75" alt="playwright" src="https://github.com/user-attachments/assets/030573e5-2bb9-46df-956b-86f50add4917" />| 	<img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/912db761-0ecb-46e1-a393-7a2cfbd52152" />| <img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/8e7dbe5f-d4d9-4b0d-8826-f7e699a371e5" />|<img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/5633cd6e-0549-42cb-b56a-a38c90a3ecb3" />|<img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/2f73dde0-39fa-4351-abbf-6c1db0f35e4b" />
-|
- 
 
 
 
- 
 
-### Knowlege 
-Page Object Model (POM)
-CI/CD
-HTML Reports Creation 
-API Testing - E2E Testing - UI Testing
+
+
+
 
 Running Tests Locally
-
+<!-- dffsf  --> 
 Install dependencies:
 
-npm install
+ `npm install`
+
 
 Run tests:
 
-npx playwright test
+`npx playwright test`
 
 Open HTML report:
 
-npx playwright show-report
+`npx playwright show-report`
 
 
 
