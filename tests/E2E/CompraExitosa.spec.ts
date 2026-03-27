@@ -51,6 +51,10 @@ await test.step("iniciar sesion para continuar ",async()=>{
 
   await page.getByRole('button', { name: 'Proceed to checkout' }).click();
 
+  
+  const streetInput = page.locator('[data-test="street"]');
+ await expect(streetInput).not.toHaveValue('');
+
  });
 
 
@@ -58,8 +62,13 @@ await test.step("completar datos faltantes y fin de compra",async()=>{
 
  await cart.completarDatosFaltantes(
   DatosNecesarios.DatosHappyPath.state,
+  
   DatosNecesarios.DatosHappyPath.postcode); 
-await page.getByRole('button', { name: 'Proceed to checkout' }).click();
+
+  // este locator NO deberia estar aqui pero tiene una falla que hace los tests aveces fallen y como no voy a escalar más me doy el permiso de poner un locator,  donde no deberia estar.
+const checkoutBtn = page.getByRole('button', { name: 'Proceed to checkout' });
+await expect(checkoutBtn).toBeEnabled();
+await checkoutBtn.click();
 
  await cart.payment();
 
