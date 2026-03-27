@@ -1,6 +1,6 @@
 # Playwright Automation Testing Project
 
-### Overview 
+## Overview 
 
 This project brings together a set of technical test cases designed to validate non-trivial and edge-case scenarios, adding complexity to demonstrate strong problem-solving skills in test automation. It showcases a complete automation testing framework built with Playwright, following the Page Object Model (POM) architecture.
 The project includes both **UI and API testing**.
@@ -22,11 +22,10 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
  
 
 ### Testing Knowledge & Practices
-
-- Test architecture using Page Object Model (POM)
-- CI/CD integration for continuous testing workflows
-- Test reporting with HTML-based reports
-- API, End-to-End (E2E), and UI testing strategies
+```  -Test architecture using Page Object Model (POM).  ```
+```  -CI/CD integration for continuous testing workflows.  ```
+```  -Test reporting with HTML-based reports.  ```
+```  -API, End-to-End (E2E), and UI testing strategies.  ```
 
 
 
@@ -43,71 +42,37 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
 > Install dependencies - Install browsers - Run tests - Generate HTML report - Upload artifacts - Publish report
 
 
+### Test Reports
+
+> After each execution, Playwright generates an HTML report.
+> The report includes: - Passed tests    - Failed tests ( with Screenshots)  - Execution time 
+
+### GitHub Actions
+
+> Tests run automatically on: `push to main`    `push to master`   `pull requests`
+> Report is available in GitHub Actions artifacts.
 
 
 
 
+### Running Tests Locally
+
+To execute the tests on your local environment:
+
+1. Install dependencies:
+   `npm install`
+
+2. Run all tests:
+   `npx playwright test`
+
+   Run tests in headed mode:
+   `npx playwright test --headed`
+
+3. Open the HTML report:
+   `npx playwright show-report`
 
 
 
-Running Tests Locally
-<!-- dffsf  --> 
-Install dependencies:
-
- `npm install`
-
-
-Run tests:
-
-`npx playwright test`
-
-Open HTML report:
-
-`npx playwright show-report`
-
-
-
-
-## Test Reports
-
-After each execution, Playwright generates an HTML report.
-The report includes:
-- passed tests    - failed tests  - screenshots  - traces  - execution time - logs
-
-GitHub Actions
-
-Tests run automatically on:
-
-push to main - push to master - pull requests
-
-Report is available in GitHub Actions artifacts.
-
-
-Project Structure
-Playwright/
-│
-├── pages/
-│   ├── HomePage.ts
-│   ├── LoginPage.ts
-│   ├── Cart.ts
-│   ├── ContactPage.ts
-│
-├── tests/
-│   ├── UI/
-│   │   └── PruebasUI.spec.ts
-│   │
-│   ├── E2E/
-│   │   └── CompraExitosa.spec.ts
-│   │
-│   ├── API/
-│
-├── Fixtures/
-│   └── ForE2EFlow.json
-│
-├── playwright.config.ts
-├── package.json
-├── README.md
-├── .github/workflows/playwright.yml
 
 
 ## Test Coverage 
