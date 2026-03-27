@@ -26,7 +26,13 @@ After each execution, Playwright generates an HTML report.
 The report includes:
 - passed tests    - failed tests  - screenshots  - traces  - execution time - logs
 
+GitHub Actions
 
+Tests run automatically on:
+
+push to main - push to master - pull requests
+
+Report is available in GitHub Actions artifacts.
 
 ## Test Coverage 
 
