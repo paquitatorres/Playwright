@@ -52,14 +52,14 @@ test.describe('Búsqueda de productos, seleccionando el segundo', () => {
 
    await homePage.open();
    await expect(page).toHaveURL('/');
-   await homePage.waitStaticDebug(4); // Espera estática para depuración
+   
    await homePage.aplicarFiltro();  
-    await homePage.waitStaticDebug(4); // Espera estática para depuración
+   
    
     const precios = await homePage.obtenerPrecios();
    console.log('Precios obtenidos:', precios);
    
-    await  homePage.waitStaticDebug(4); // Espera estática para depuración
+    
     PriceHelper.validarOrdenAscendente(precios);
 
  });
