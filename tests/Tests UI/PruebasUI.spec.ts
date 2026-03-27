@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { HomePage } from '../../pages/HomePage';
 import { LoginPage } from '../../pages/LoginPage';
-import { PriceHelper } from '../../utilities/PriceHelper';
-import { Waits } from '../../utilities/Waits';
+import { PriceHelper } from '../../utilities/priceHelper';
+import { Waits } from '../../utilities/waits';
 import { Components } from '../../pages/Components';
 import { Contact } from '../../pages/ContactPage';
 

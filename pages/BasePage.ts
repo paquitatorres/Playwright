@@ -1,5 +1,5 @@
 import { Page, Locator} from "@playwright/test";
-import { Waits } from "../utilities/Waits";
+import { Waits } from "../utilities/waits";
 
 export class BasePage {
     readonly page: Page;
