@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { initTokenPool, getToken , getRandomToken } from '../../utilities/Helpers';
+
+import { initTokenPool, getToken , getRandomToken } from '../../utilities/helperPoolsTokens';
 
 const apiUrl = 'https://api.practicesoftwaretesting.com';
 
@@ -205,6 +206,3 @@ expect(cartContents.cart_items[0].quantity).toBe(10);
 expect(cartContents.cart_items[0].product_id).toBe(productId);
 
 });
-
-
-
