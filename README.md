@@ -20,22 +20,20 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
 
 ### Continuous Integration
 
-This project uses GitHub Actions to automatically run tests on every push and pull request.
+> This project uses GitHub Actions to automatically run tests on every push and pull request. CI/CD includes:
+> Install dependencies - Install browsers - Run tests - Generate HTML report - Upload artifacts - Publish report
 
-CI/CD includes:
+### Tech Stack 
 
-install dependencies
-install browsers
-run tests
-generate HTML report
-upload artifacts
-publish report
+ Playwright | TypeScript | Node.js | GitHub Actions | Ubuntu |
+|     :---:      |     :---:      |     :---:      |     :---:      |       :---:      |
+| <img width="75" height="75" alt="playwright" src="https://github.com/user-attachments/assets/030573e5-2bb9-46df-956b-86f50add4917" />| 	<img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/912db761-0ecb-46e1-a393-7a2cfbd52152" />| <img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/8e7dbe5f-d4d9-4b0d-8826-f7e699a371e5" />|<img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/5633cd6e-0549-42cb-b56a-a38c90a3ecb3" />|<img width="75" height="75" alt="image" src="https://github.com/user-attachments/assets/2f73dde0-39fa-4351-abbf-6c1db0f35e4b" />
+|
+ 
 
-### Technologies Used
-- Playwright
-- TypeScript
-- Node.js
-- GitHub Actions
+
+
+ 
 
 ### Knowlege 
 Page Object Model (POM)
