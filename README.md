@@ -120,43 +120,41 @@ To execute the tests on your local environment:
  
 
 ## End-to-End (E2E) Test
-### Complete Purchase Flow
+### :fast_forward: Complete Purchase Flow
 ###### Simulates the full user journey: Product selection - Add to cart - Checkout process
 
 **Value:** Validates the core business flow from an end-user perspective.
 
 ##  API Testing
- 1. Cart Creation + Performance Measurement
+
+:arrow_right_hook:  Cart Creation + Performance Measurement
 ###### Sends a POST request to /carts. Measures response time.
 
-**Validations:** Status code: 201 (Created)
-Response contains a non-empty id
-Response time < 2000 ms
+**Validations:**
+-  $\color{Green}{\textsf{ Status code: 201 (Created) }}$ 
+- Response contains a non-empty id
+- Response time < 2000 ms
 
-👉 Value: Combines functional validation with performance checks (critical smoke test).
+** Value:**  Combines functional validation with performance checks (critical smoke test).
 
-📦 2. Product Retrieval & Data Reusability
-Sends a GET request to /products.
-Extracts a valid product ID for reuse in other tests.
+:arrow_right_hook: Product Retrieval & Data Reusability
+###### Sends a GET request to /products. Extracts a valid product ID for reuse in other tests.
 
-Validations:
+**Validations:**
+ $\color{Green}{\textsf{ Status code: 200 (OK) }}$ 
+**Value:** Ensures data availability and enables realistic test chaining.
 
-Status code: 200 (OK)
+ 
+ :arrow_right_hook: Endpoint Validation (With & Without Authentication)
+###### Initializes a token pool (simulating multiple users).
+###### Tests both: Public endpoints (no authentication) Protected endpoints (with token)
+###### Generates a summary report (OK / FAILED).
 
-👉 Value: Ensures data availability and enables realistic test chaining.
+ **Value:**  Validates API availability, security, and overall stability.
 
-🔑 3. Endpoint Validation (With & Without Authentication)
-Initializes a token pool (simulating multiple users).
-Tests both:
-Public endpoints (no authentication)
-Protected endpoints (with token)
-Generates a summary report (OK / FAILED).
-
-👉 Value: Validates API availability, security, and overall stability.
-
-🚀 4. Concurrency Testing: Multiple Add-to-Cart Requests
-Adds the same product 10 times in parallel.
-Measures total and average response time.
+:arrow_right_hook: Concurrency Testing: Multiple Add-to-Cart Requests
+###### Adds the same product 10 times in parallel.
+###### Measures total and average response time.
 
 Validations:
 
@@ -165,9 +163,9 @@ Final cart state:
 Contains a single product entry
 Quantity correctly accumulated (10), not duplicated entries
 
-👉 Value: Validates business logic and system behavior under concurrent load.
+** Value: ** Validates business logic and system behavior under concurrent load.
 
-🎯 Business Impact
+## Business Impact
 
 These tests ensure that:
 
@@ -176,7 +174,7 @@ Response times remain within acceptable limits, improving user experience.
 The system can handle real-world scenarios (concurrency, high demand).
 Authentication and endpoint availability do not impact conversion rates.
 
-👉 In case of failures, issues can be detected early, preventing impact on end users and protecting platform reliability.
+ In case of failures, issues can be detected early, preventing impact on end users and protecting platform reliability.
 
 ## Test Report Preview
 
