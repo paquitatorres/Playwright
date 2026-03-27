@@ -193,7 +193,7 @@ npx playwright show-report
 
 You can view the latest test execution report here:
 
-👉 https://TU_USUARIO.github.io/TU_REPO/
+👉 https://paquitatorres.github.io/Playwright/
 
 
 
