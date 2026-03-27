@@ -23,10 +23,9 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
 
 ### Tech Stack 
 
- Playwright | TypeScript | Node.js | GitHub Actions | Ubuntu |
+Playwright | TypeScript | Node.js | GitHub Actions | Ubuntu |
 |     :---:      |     :---:      |     :---:      |     :---:      |       :---:      |
-| <img width="75" height="75" alt="playwright" src="https://github.com/user-attachments/assets/030573e5-2bb9-46df-956b-86f50add4917" />| 	<img width="75" height="75" alt="typeScript" src="https://github.com/user-attachments/assets/912db761-0ecb-46e1-a393-7a2cfbd52152" />| <img width="75" height="75" alt="node.js" src="https://github.com/user-attachments/assets/8e7dbe5f-d4d9-4b0d-8826-f7e699a371e5" />|<img width="75" height="75" alt="github actions" src="https://github.com/user-attachments/assets/5633cd6e-0549-42cb-b56a-a38c90a3ecb3" />|<img width="75" height="75" alt="ubuntu" src="https://github.com/user-attachments/assets/2f73dde0-39fa-4351-abbf-6c1db0f35e4b" />|
- 
+| <img width="75" height="75" alt="playwright" src="https://github.com/user-attachments/assets/030573e5-2bb9-46df-956b-86f50add4917" />| 	<img width="75" height="75" alt="typeScript" src="https://github.com/user-attachments/assets/912db761-0ecb-46e1-a393-7a2cfbd52152" />| <img width="75" height="75" alt="node.js" src="https://github.com/user-attachments/assets/8e7dbe5f-d4d9-4b0d-8826-f7e699a371e5" />|<img width="75" height="75" alt="github actions" src="https://github.com/user-attachments/assets/5633cd6e-0549-42cb-b56a-a38c90a3ecb3" />|<img width="75" height="75" alt="ubuntu" src="https://github.com/user-attachments/assets/2f73dde0-39fa-4351-abbf-6c1db0f35e4b" />| 
 
 ### Features
 - Data-driven testing (JSON / Excel) for dynamic scenarios
@@ -66,7 +65,7 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
 
 
 
-### Running Tests Locally
+# Running Tests Locally
 
 To execute the tests on your local environment:
 
@@ -83,48 +82,116 @@ To execute the tests on your local environment:
    `npx playwright show-report`
 
 
+# Test Scenarios Overview
 
+## UI Testing
 
+ 
+### :arrow_forward: Test 1: Dynamic Product Search & Error Handling
+###### This test validates the system’s ability to handle dynamic searches using external data sources (JSON). Product searches are executed using parameterized data. The test specifically selects the second result from the list. If a second product does not exist or the product is unavailable: The absence of the element is handled gracefully without breaking the test. A controlled message is logged indicating that a second product is not available. A screenshot is captured as evidence of the “No results found” state.
+ **Value:** Demonstrates data-driven testing, error handling, and test resilience.
 
-## Test Coverage 
+### :arrow_forward: Test 2: Product Sorting Validation (Price Low to High)
 
+###### This scenario validates that the system correctly sorts products when applying filters. A price filter (low to high) is applied.Prices displayed in the UI are collected.Values are compared to ensure they are sorted in ascending order.
 
+**Value:** Ensures data consistency and correct business logic implementation on the frontend.
 
+🔐 Test 3: Successful Login (Happy Path)
 
-### TEST 1 “BUSCAR PRODUCTOS (PASADOS POR JSON), SELECCIONAR EL SEGUNDO RESULTADO O INFORMAR ERROR CON MENSAJE DE QUE NO EXISTE SEGUNDO PRODUCTO”
+Validates the complete authentication flow using valid credentials.
 
-Búsqueda Dinámica y Manejo de Índices: El candidato debe consumir un archivo (JSON o Excel) con los nombres de los productos. La lógica debe ser capaz de:
+A login is performed with a valid user.
+Session validation is performed by checking:
+Elements visible only to authenticated users (e.g., profile name).
+Session persistence (e.g., Local Storage data or session token).
 
-Buscar una clase de productos y hacer click específicamente en el **segundo resultado** de la lista/grid. 
+👉 Value: Ensures that the critical access flow works correctly.
 
-En el caso de buscar un producto inexistente. El script debe detectar que el elemento no está presente, **capturar un error controlado** (sin que el test "explote") y tomar una **captura de pantalla (screenshot)** de la página de "No results found". 
+❌ Test 4: Negative Login Scenarios
 
-### TEST 2 “VALICIÓN DE ORDENAMIENTO DE PRODUCTOS AL APLICAR UN FILTRO POR PRECIO DE MENOR A MAJOR”
+This test suite evaluates system behavior under invalid authentication conditions:
 
-Creación de listas o Arrays y Comparación de Datos Númericos:  El candidato debe aplicar un filtro de precio ascendente, recolectar los datos de precios de la pagina,  y compararlos para ver si están organizados en el orden correspondiente. 
+Incorrect username
+Incorrect password
+Empty input fields
 
-### TEST 3 “HAPPY PATH: INICIAR SESION CON CREDENCIALES VALIDAS”
+👉 Value: Ensures proper error handling and secure access control.
 
-Autenticación y Persistencia de Sesión:
+📎 Test 5: File Upload Validation
 
-No basta con entrar; hay que demostrar que estamos dentro.
+Validates the file upload functionality.
 
-- **Flujo:** Realizar un login exitoso con credenciales válidas.
-- **Aserción (Validación):**  validar la existencia de un elemento que solo un usuario logueado ve (ej: el botón de "Logout", el nombre del perfil o el token de sesión en el *Local Storage*).
+Upload of a .txt file with specific constraints (e.g., defined file size).
 
-### TEST 4 “CASOS NEGATIVOS DE INICIO DE SESIÓN”
+👉 Value: Covers a key user interaction within the system.
 
-### TEST 5 “SUBIR UN ARCHIVO A COMPROBANTES”
+🔄 End-to-End (E2E) Test
+🛒 Complete Purchase Flow
 
-## TEST E2E
+Simulates the full user journey:
 
-“REALIZACIÓN DE COMPRA DE UN PRODUCTO”
+Product selection
+Add to cart
+Checkout process
 
-## API TEST
+👉 Value: Validates the core business flow from an end-user perspective.
 
-### TEST “CREAR UN CARRITO,OBTENIENDO RESPUESTA HTTP 200, MARQUE COMO ERROR SI DA OTRA RESPUESTA, O TIEMPO DE RESPUESTA MAJOR A 2000ms.”
+🔌 API Testing
+⚡ 1. Cart Creation + Performance Measurement
+Sends a POST request to /carts.
+Measures response time.
 
+Validations:
 
+Status code: 201 (Created)
+Response contains a non-empty id
+Response time < 2000 ms
+
+👉 Value: Combines functional validation with performance checks (critical smoke test).
+
+📦 2. Product Retrieval & Data Reusability
+Sends a GET request to /products.
+Extracts a valid product ID for reuse in other tests.
+
+Validations:
+
+Status code: 200 (OK)
+
+👉 Value: Ensures data availability and enables realistic test chaining.
+
+🔑 3. Endpoint Validation (With & Without Authentication)
+Initializes a token pool (simulating multiple users).
+Tests both:
+Public endpoints (no authentication)
+Protected endpoints (with token)
+Generates a summary report (OK / FAILED).
+
+👉 Value: Validates API availability, security, and overall stability.
+
+🚀 4. Concurrency Testing: Multiple Add-to-Cart Requests
+Adds the same product 10 times in parallel.
+Measures total and average response time.
+
+Validations:
+
+All requests return successfully
+Final cart state:
+Contains a single product entry
+Quantity correctly accumulated (10), not duplicated entries
+
+👉 Value: Validates business logic and system behavior under concurrent load.
+
+🎯 Business Impact
+
+These tests ensure that:
+
+Critical functionalities (login, products, cart) work reliably.
+Response times remain within acceptable limits, improving user experience.
+The system can handle real-world scenarios (concurrency, high demand).
+Authentication and endpoint availability do not impact conversion rates.
+
+👉 In case of failures, issues can be detected early, preventing impact on end users and protecting platform reliability.
 
 ## Test Report Preview
 
