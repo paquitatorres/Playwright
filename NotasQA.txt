@@ -4,7 +4,7 @@ Se modifica de la carpeta Playwhright.config.ts
                 -Los browswers se desahabilitan ,solo se permite que se ejecute Chromium. 
                 -Se modifica la URL Base 
                 -Se habilita para tomar screnshots
-
+                -Cambio linea 25 sobre reportes
 
 Para las pruebas de API  uso la informacion del Swagger :
 
