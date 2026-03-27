@@ -4,7 +4,6 @@
 ![CI/CD](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-orange)
 ![Status](https://img.shields.io/badge/tests-passing-brightgreen)
 
-![CI](https://github.com/paquitatorres/Playwright/actions/workflows/playwright.yml/badge.svg)
 
 # Playwright Automation Testing Project
 
@@ -50,9 +49,9 @@ Additionally, the project considers high-demand scenarios (such as Black Friday 
 
 ### Continuous Integration
 
-> This project uses GitHub Actions to automatically run tests on every push and pull request. CI/CD includes:
+> This project uses GitHub Actions to automatically run tests on every push and pull request. This project uses GitHub Actions to ensure code quality and stability CI/CD includes:
 > Install dependencies - Install browsers - Run tests - Generate HTML report - Upload artifacts - Publish report
-
+> Workflow file: .github/workflows/playwright.yml
 
 ### Test Reports
 
@@ -124,6 +123,29 @@ No basta con entrar; hay que demostrar que estamos dentro.
 ## API TEST
 
 ### TEST “CREAR UN CARRITO,OBTENIENDO RESPUESTA HTTP 200, MARQUE COMO ERROR SI DA OTRA RESPUESTA, O TIEMPO DE RESPUESTA MAJOR A 2000ms.”
+
+
+
+## Test Report Preview
+
+![HTML Report](./reports/report-preview.png)
+
+## Example: No Results Found (Error Handling)
+
+![No Results](./screenshots/no-results.png)
+
+## Test Reports
+
+After running the tests, a detailed HTML report is generated automatically.
+
+To open the report locally:
+npx playwright show-report
+
+## Live Test Reports (GitHub Pages)
+
+You can view the latest test execution report here:
+
+👉 https://TU_USUARIO.github.io/TU_REPO/
 
 
 
