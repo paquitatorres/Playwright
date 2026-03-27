@@ -2,25 +2,23 @@
 
 ### Overview 
 
-Este proyecto reúne distintas pruebas técnicas y casos diseñados para validar escenarios poco comunes agregando un poco más de dificultad para demostrar la resolución de problemas complejos de automatización. 
-This project showcases a complete automation testing framework built with Playwright using the Page Object Model (POM) architecture.
-Incluye automatización de test de UI, enfocada en la validación funcional desde la perspectiva del usuario, y pruebas de API con y sin Tokens de autorización, orientadas a analizar tiempos de respuesta, estabilidad y comportamiento del sistema.
-Además, se contemplan escenarios de alta demanda (eventos como Black Friday) donde se evalúa que no haya perdida de la capacidad del sistema para mantener su rendimiento, o poder crear alertas antes funcionamientos  .
-El enfoque no está solo en ejecutar pruebas, sino en aplicar criterio: definir qué validar, cómo hacerlo y qué métricas observar para asegurar la calidad del producto en contextos reales.
+This project brings together a set of technical test cases designed to validate non-trivial and edge-case scenarios, adding complexity to demonstrate strong problem-solving skills in test automation. It showcases a complete automation testing framework built with Playwright, following the Page Object Model (POM) architecture.
+The project includes both **UI and API testing**.
 
-Page Object Model (POM)
+<ins>UI Testing</ins>, focused on end-user functional validation, ensuring critical user flows behave as expected. <ins>API Testing</ins> Covers scenarios <ins>***with and without authorization tokens***</ins>, analyzing response times, system stability, and overall behavior under different conditions.
 
-The project follows the Page Object Model design pattern to improve:
+Additionally, the project considers high-demand scenarios (such as Black Friday events), evaluating the system’s ability to maintain performance under load and enabling early detection.
 
-maintainability
-readability
-scalability
-reusable components
+ _The approach goes beyond simply executing tests, it emphasizes critical thinking: defining what to validate, how to validate it, and which metrics to monitor in order to ensure product quality in real world scenarios._ 
+  
 
-Each page contains its locators and actions, separating logic from tests.
+### Page Object Model (POM)
+> The project follows the Page Object Model design pattern to improve:
+> Maintainability- Readability- Scalability and Reusable components.
+> **Each page contains its locators and actions, separating logic from tests.**
 
 
-Continuous Integration
+### Continuous Integration
 
 This project uses GitHub Actions to automatically run tests on every push and pull request.
 
