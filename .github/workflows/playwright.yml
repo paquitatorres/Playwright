@@ -8,7 +8,7 @@ on:
     branches: [ main, master ]
 
   schedule:
-    - cron: '0 18 * * 5'
+    - cron: '0 20 * * 5'
 
 
 jobs:

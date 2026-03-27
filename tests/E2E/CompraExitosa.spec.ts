@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { HomePage } from '../../pages/HomePage';
 import { LoginPage } from '../../pages/LoginPage';
-import { Waits } from '../../utilities/Waits';
+import { Waits } from '../../utilities/waits';
 import { Components } from '../../pages/Components';
 import { Cart } from '../../pages/Cart';
 
