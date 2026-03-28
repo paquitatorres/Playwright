@@ -187,6 +187,7 @@ Authentication and endpoint availability do not impact conversion rates.
 
 ## Example: No Results Found (Error Handling)
 
+![HTML Report](reports/screenshots/FirstTestUI.png)
 ![HTML Report](./reports/screenshots/test-failed-1.png)
 
 ## Test Reports
