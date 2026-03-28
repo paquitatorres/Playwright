@@ -176,11 +176,18 @@ Authentication and endpoint availability do not impact conversion rates.
 
 ## Test Report Preview
 
-![HTML Report](./reports/report-preview.png)
+![HTML Report](./reports/screenshots/test1.png)
+![HTML Report](./reports/screenshots/TestsUI.png)
+![HTML Report](./reports/screenshots/UI.png)
+
+![HTML Report](./reports/screenshots/tests.png)
+
+
+
 
 ## Example: No Results Found (Error Handling)
 
-![No Results](./screenshots/no-results.png)
+![HTML Report](./reports/screenshots/test-failed-1.png)
 
 ## Test Reports
 
